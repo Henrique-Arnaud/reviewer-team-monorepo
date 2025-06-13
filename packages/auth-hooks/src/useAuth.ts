@@ -1,4 +1,4 @@
-// packages/auth-hooks/useAuth.ts
+'use client'
 import Cookies from 'js-cookie'
 export const useAuth = () => {
   const token = Cookies.get('token')

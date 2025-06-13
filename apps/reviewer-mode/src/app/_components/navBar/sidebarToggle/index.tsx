@@ -2,9 +2,9 @@
 
 import React, { useCallback, useRef, useState } from 'react'
 import { Bars3Icon } from '@heroicons/react/24/outline'
-import { useClickOutsideComponentObserver } from '@/app/_utils/handleClickOutsideComponent'
 import NavBarItem from '../navBarItem'
 import { navigationItems } from './const/navBarItems'
+import { useClickOutsideComponentObserver } from '../../../_utils/useClickOutsideComponent'
 
 export default function SidebarToggle() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)

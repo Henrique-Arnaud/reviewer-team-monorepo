@@ -1,10 +1,10 @@
 'use client'
-import Input from '@/app/_components/input'
 import React from 'react'
 import { useLoginForm } from './_hooks'
 import { LockClosedIcon, UserIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import Input from '../../_components/input'
 
 export default function Login() {
   const { register, errors, handleSubmit, onSubmit } = useLoginForm()
@@ -37,7 +37,10 @@ export default function Login() {
             Icon={LockClosedIcon}
           />
         </div>
-        <button className="h-12 w-full mt-6 bg-emerald-800 rounded-lg transition-colors duration-500 active:bg-gray-800" type="submit">
+        <button
+          className="h-12 w-full mt-6 bg-emerald-800 rounded-lg transition-colors duration-500 active:bg-gray-800"
+          type="submit"
+        >
           Submit
         </button>
       </form>

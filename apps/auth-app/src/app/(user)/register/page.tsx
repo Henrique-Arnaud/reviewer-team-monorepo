@@ -1,9 +1,9 @@
 'use client'
-import Input from '@/app/_components/input'
 import React from 'react'
 import { useRegisterForm } from './_hooks'
 import { AtSymbolIcon, LockClosedIcon, UserIcon } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
+import Input from '../../_components/input'
 
 export default function Register() {
   const { register, errors, handleSubmit, onSubmit } = useRegisterForm()
