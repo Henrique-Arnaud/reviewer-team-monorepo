@@ -126,7 +126,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/drt67672/Documents/Projetos/reviewer-team-monorepo/apps/auth-app/generated/prisma",
+      "value": "/Users/drt67672/Documents/Projetos/reviewer-team-monorepo/apps/auth-app/prisma/generated",
       "fromEnvVar": null
     },
     "config": {
@@ -147,7 +147,7 @@ const config = {
     "rootEnvPath": null,
     "schemaEnvPath": "../../.env"
   },
-  "relativePath": "../../prisma",
+  "relativePath": "..",
   "clientVersion": "6.9.0",
   "engineVersion": "81e4af48011447c3cc503a190e86995b66d2a28e",
   "datasourceNames": [
@@ -163,8 +163,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id         String   @id @default(uuid())\n  email      String   @unique\n  username   String   @unique\n  password   String\n  ageConfirm Boolean\n  createdAt  DateTime @default(now())\n}\n",
-  "inlineSchemaHash": "2ae32179c1e3c50219f84fb30451fcad7d784ae158c11479ea44a895ee6ccd77",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id         String   @id @default(uuid())\n  email      String   @unique\n  username   String   @unique\n  password   String\n  ageConfirm Boolean\n  createdAt  DateTime @default(now())\n}\n",
+  "inlineSchemaHash": "1805b90672d43ef0a486a922ec267acf18122738f30df55aa8255ecce901217d",
   "copyEngine": true
 }
 config.dirname = '/'
