@@ -1,9 +1,11 @@
 {
-  "extends": [
-    "//"
-  ],
+  "extends": ["//"],
   "tasks": {
+    "generate": {
+      "outputs": ["generated/**"]
+    },
     "build": {
+      "dependsOn": ["^generate"],
       "env": [
         "SUPABASE_URL",
         "SUPABASE_KEY",
