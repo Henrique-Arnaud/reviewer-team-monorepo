@@ -2,23 +2,12 @@
 import React from 'react'
 import { useRegisterForm } from './_hooks'
 import { AtSymbolIcon, LockClosedIcon, UserIcon } from '@heroicons/react/24/outline'
-import { motion } from 'framer-motion'
 import Input from '../../_components/input'
 
 export default function Register() {
   const { register, errors, handleSubmit, onSubmit } = useRegisterForm()
-  const variants = {
-    hidden: { opacity: 0 },
-    enter: { opacity: 1 },
-  }
   return (
-    <motion.main
-      variants={variants}
-      initial="hidden"
-      animate="enter"
-      transition={{ type: 'linear', delay: 0.2 }}
-      className="flex flex-col w-11/12 ml-auto mr-auto mt-16 mb-36 pl-6 pr-6 pt-8 pb-8 bg-gray-900"
-    >
+    <main className="flex flex-col w-11/12 ml-auto mr-auto mt-16 mb-36 pl-6 pr-6 pt-8 pb-8 bg-gray-900">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-3">
           <Input
@@ -62,6 +51,6 @@ export default function Register() {
           Create account
         </button>
       </form>
-    </motion.main>
+    </main>
   )
 }

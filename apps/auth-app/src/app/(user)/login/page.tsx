@@ -3,23 +3,13 @@ import React from 'react'
 import { useLoginForm } from './_hooks'
 import { LockClosedIcon, UserIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import Input from '../../_components/input'
 
 export default function Login() {
   const { register, errors, handleSubmit, onSubmit } = useLoginForm()
-  const variants = {
-    hidden: { opacity: 0, x: -200, y: 0 },
-    enter: { opacity: 1, x: 0, y: 0 },
-  }
+
   return (
-    <motion.main
-      variants={variants}
-      initial="hidden"
-      animate="enter"
-      transition={{ type: 'linear' }}
-      className="flex flex-col w-full mt-26 mb-36 pl-6 pr-6"
-    >
+    <main className="flex flex-col w-full mt-26 mb-36 pl-6 pr-6">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-3">
           <Input
@@ -52,6 +42,6 @@ export default function Login() {
           Forgot your password?
         </Link>
       </div>
-    </motion.main>
+    </main>
   )
 }
