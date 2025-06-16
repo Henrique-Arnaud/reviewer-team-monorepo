@@ -7,7 +7,7 @@
   "tasks": {
     "generate": {
       "outputs": [
-        "apps/auth-app/generated/**"
+        "apps/auth-app/prisma/generated/**"
       ]
     },
     "build": {

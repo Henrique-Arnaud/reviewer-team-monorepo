@@ -2,7 +2,7 @@
   "extends": ["//"],
   "tasks": {
     "generate": {
-      "outputs": ["generated/**"]
+      "outputs": ["prisma/generated/**"]
     },
     "build": {
       "dependsOn": ["^generate"],
