@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "//"
+  ],
+  "tasks": {
+    "build": {
+      "env": [
+        "SUPABASE_URL",
+        "SUPABASE_KEY",
+        "DATABASE_URL",
+        "JWT_SECRET"
+      ]
+    }
+  }
+}
