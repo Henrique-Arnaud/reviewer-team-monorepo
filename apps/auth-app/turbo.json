@@ -10,7 +10,9 @@
         "SUPABASE_URL",
         "SUPABASE_KEY",
         "DATABASE_URL",
-        "JWT_SECRET"
+        "JWT_SECRET",
+        "REVIEWER_MODE_URL",
+        "SESSION_COOKIES_DOMAIN"
       ]
     }
   }
