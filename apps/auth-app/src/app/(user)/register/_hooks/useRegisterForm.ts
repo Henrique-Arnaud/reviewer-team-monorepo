@@ -9,6 +9,7 @@ export const useRegisterForm = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<registerFormDataType>({ resolver: zodResolver(registerFormSchema) })
 
@@ -16,12 +17,14 @@ export const useRegisterForm = () => {
 
   const onSubmit: SubmitHandler<registerFormDataType> = async (data) => {
     try {
-      const res = await fetch('/api/auth/login', {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const {confirmPassword, ...registerFields} = data
+      const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(registerFields),
       })
 
       if (!res.ok) {
@@ -30,7 +33,7 @@ export const useRegisterForm = () => {
         return
       }
 
-      console.log('Login successful')
+      console.log('register successful')
       router.push('/dashboard')
     } catch (err) {
       console.error(err)
@@ -42,6 +45,7 @@ export const useRegisterForm = () => {
     register,
     handleSubmit,
     errors,
+    setValue,
     onSubmit,
   }
 }

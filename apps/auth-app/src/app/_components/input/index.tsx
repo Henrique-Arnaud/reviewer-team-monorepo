@@ -25,7 +25,6 @@ export default function Input({ labelText, errorMessage, Icon, ...props }: Input
         )}
         <input
           aria-label={labelText}
-          autoComplete="off"
           className={`w-full h-11 pl-9 pr-1.5 bg-[#E7F0FE] text-black rounded-lg ${
             errorMessage ? 'border-red-600 border-1 border-solid' : ''
           }`}

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Input from '../../_components/input'
 
 export default function Login() {
-  const { register, errors, handleSubmit, onSubmit } = useLoginForm()
+  const { register, errors, handleSubmit, onSubmit, isLoading } = useLoginForm()
 
   return (
     <main className="flex flex-col w-full mt-26 mb-36 pl-6 pr-6">
@@ -31,7 +31,7 @@ export default function Login() {
           className="h-12 w-full mt-6 bg-emerald-800 rounded-lg transition-colors duration-500 active:bg-gray-800"
           type="submit"
         >
-          Submit
+          {isLoading ? 'Loading...' : 'Submit'}
         </button>
       </form>
       <div className="flex justify-between mt-5">

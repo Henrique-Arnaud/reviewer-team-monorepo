@@ -3,6 +3,7 @@ import prisma from 'apps/auth-app/lib/prisma'
 import { NextResponse } from 'next/server'
 import bcrypt from 'bcryptjs'
 import { generateToken } from 'apps/auth-app/lib/auth'
+import { env } from 'apps/auth-app/lib/env'
 
 export async function POST(req: Request) {
   try {
@@ -31,6 +32,7 @@ export async function POST(req: Request) {
 
     const res = NextResponse.json({ message: 'Logged in' })
     res.cookies.set('token', token, {
+      domain: env.SESSION_COOKIES_DOMAIN,
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       path: '/',
@@ -38,7 +40,7 @@ export async function POST(req: Request) {
       maxAge: 60 * 60 * 24 * 7,
     })
 
-    logger.info('User logged in successfully', { id: user.id, username })
+    logger.info('User logged in successfully', { id: user.id, domain: env.SESSION_COOKIES_DOMAIN })
 
     return res
   } catch (error) {

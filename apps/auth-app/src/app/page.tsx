@@ -1,3 +1,5 @@
+import { permanentRedirect } from 'next/navigation'
+
 export default function Home() {
-  return <div> teste 2</div>
+  permanentRedirect('/login')
 }

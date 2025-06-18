@@ -9,5 +9,8 @@ function getEnvVar(key: string): string {
 export const env = {
   JWT_SECRET: getEnvVar('JWT_SECRET'),
   DATABASE_URL: getEnvVar('DATABASE_URL'),
-  
+  REVIEWER_MODE_URL: getEnvVar('REVIEWER_MODE_URL'),
+  SESSION_COOKIES_DOMAIN: getEnvVar('SESSION_COOKIES_DOMAIN'),
+  AUTH_APP_ORIGIN: getEnvVar('AUTH_APP_ORIGIN'),
+  REVIEWER_MODE_APP_ORIGIN: getEnvVar('REVIEWER_MODE_APP_ORIGIN'),
 }
